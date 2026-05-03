@@ -2,26 +2,24 @@ export interface UserProfile {
   name: string;
   city: string;
   area: string;
-  disco: string;
+  provider: string;
   appliances: string[];
 }
 
-export interface ScheduleSlot {
-  start: string;
-  end: string;
-  confidence: number;
-  status: 'confirmed' | 'predicted' | 'unclear';
-}
-
-export interface ChatMessage {
+export interface OutageSlot {
   id: string;
-  role: 'user' | 'model';
-  text: string;
+  startTime: string;
+  endTime: string;
+  type: 'Predicted' | 'Confirmed';
+  confidence: number;
 }
 
-export interface TrackerState {
-  upsBattery: number;
-  generatorFuel: number;
-}
-
-export type TabType = 'dashboard' | 'planner' | 'chat' | 'map' | 'tracker' | 'reports' | 'profile';
+export const CITIES = ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi', 'Peshawar', 'Quetta'];
+export const PROVIDERS = ['KESC (K-Electric)', 'LESCO', 'IESCO', 'PESCO', 'QESCO', 'FESCO', 'MEPCO', 'HESCO'];
+export const APPLIANCES = [
+  'AC (Inverter)', 'AC (Non-Inverter)',
+  'Fridge', 'Deep Freezer',
+  'Washing Machine', 'Water Pump (Motor)',
+  'Iron', 'UPS',
+  'Generator'
+];
