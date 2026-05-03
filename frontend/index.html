@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VoltWatch - Smart Load Shedding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              electric: {
+                50: '#fefce8',
+                100: '#fef9c3',
+                400: '#facc15',
+                500: '#eab308',
+                600: '#ca8a04',
+                900: '#713f12',
+              },
+              dark: {
+                800: '#1e293b',
+                900: '#0f172a',
+                950: '#020617',
+              }
+            }
+          }
+        }
+      }
+    </script>
+      </head>
+  <body class="bg-dark-950 text-slate-200 font-sans antialiased selection:bg-electric-500 selection:text-dark-900">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.js"></script></body>
+</html>
